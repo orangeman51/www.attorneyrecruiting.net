@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="google" content="notranslate">
+		<meta http-equiv="Content-Language" content="en">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>The Optimizer - WNBA - FanDuel</title>
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/main.css?v=061317">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-73133610-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			 	<div class="container-fluid">
+				    <div class="navbar-header">
+				    	<a class="navbar-brand" href="../index.html">The Optimizer</a>
+				    </div>
+					<ul class="nav navbar-nav">
+				    	<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FanDuel <span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li class="active"><a href="nbafandueltemplate.html">FanDuel</a></li>
+				          </ul>
+				        </li>
+				    	<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WNBA <span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				          	<li><a href="../mlb/mlbfandueltemplate.html">MLB</a></li>
+				            <li><a href="../nba/nbafandueltemplate.html">NBA</a></li>
+				            <li class="active"><a href="wnbafandueltemplate.html">WNBA</a></li>
+				          </ul>
+				        </li>
+        			</ul>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+					    	<button id="optimize" class="btn btn-success navbar-btn btn-sm" type="button">Optimize</button>
+					   	</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<button id="csv-export" class="btn btn-primary navbar-btn btn-sm hide" type="button">Export to CSV</button>
+					    </ul>
+					    <ul class="nav navbar-nav navbar-right">
+						    <div class="btn-group hide" id="export-type-selector" data-toggle="buttons">
+							  <label class="btn btn-primary navbar-btn btn-xs active">
+							    <input type="radio" name="options" id="export-ids" autocomplete="off" checked> IDs
+							  </label>
+							  <label class="btn btn-primary navbar-btn btn-xs">
+							    <input type="radio" name="options" id="export-names" autocomplete="off"> Names
+							  </label>
+							</div>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+			  	</div><!-- /.container-fluid -->
+			</nav>
+
+			<div class="clearfix">
+				<div id="schedule-container">
+					<div id='schedule-retry-container' class='hide'>Error retrieving schedule. <button id='schedule-retry-button' class='btn btn-primary btn-xs' type='button'>Retry</button></div>
+					<table id="schedule" class="table table-striped"></table>
+				</div>
+				<div id="inputs">
+					<div id="lineup-quantity-form">
+						<select id="lineup-quantity"></select>
+						<span>Select number of lineups to generate</span>
+					</div>
+					<div id="min-salary-form">
+						<select id="min-salary"></select>
+						<span>Select minimum salary</span>
+					</div>
+					<h4>Import Projections</h4>
+	  				<input type="file" id="files" name="files[]"><br>
+	  				<h4>Import FanDuel Template</h4>
+	  				<input type="file" id="fd-template" name="files[]">
+					<div id='locks-excludes-button-container' class='hide'>
+						<button id='locks-excludes-button' class='btn btn-primary btn-xs' type='button'>Locks &amp; Excludes</button>
+					</div>
+				</div>
+				<div>
+					<div id="lock-container" class="hide">
+						<ul class="list-group" id="lock-list"></ul>
+					</div>
+					<div id="exclude-container" class="hide">
+						<ul class="list-group" id="exclude-list"></ul>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div id="player-selectors" class="hide clearfix">
+				<div class="clearfix">
+					<button id='clear-excludes-button' class='btn btn-danger btn-xs' type='button'>Clear Excludes</button>
+					<button id='clear-locks-button' class='btn btn-danger btn-xs' type='button'>Clear Locks</button>
+				</div>
+				<div class="player-selector-table-container">
+					<div class=clearfix>
+						<h4 class="player-selector-table-header">Guards</h4>
+					</div>
+					<div class="player-selector-table">
+						<table id="g-selector" class="table">
+							<tr><th>Team</th><th>Name</th><th class="lock-checkbox">Lock</th><th class="exclude-checkbox">Exclude</th></tr>
+						</table>
+					</div>
+				</div>
+				<div class="player-selector-table-container">
+					<div class=clearfix>
+						<h4 class="player-selector-table-header">Forwards</h4>
+					</div>
+					<div class="player-selector-table">
+						<table id="f-selector" class="table">
+							<tr><th>Team</th><th>Name</th><th class="lock-checkbox">Lock</th><th class="exclude-checkbox">Exclude</th></tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div id="team-percentage-table-container" class="clearfix"></div>
+			<div id="lineup-container"></div>
+		</div>
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+		<script src="../lib/jquery-1.11.2.min.js"></script>
+		<script src="../lib/jquery.csv-0.71.min.js"></script>
+		<script src="../lib/spin.min.js"></script>
+		<script src="../lib/date.js"></script>
+		<script src="../lib/sorttable.js"></script>
+		<script src="../lib/fuzzyset.js"></script>
+		<script src="../lib/jquery.cookie.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="js/wnbafandueltemplate.js?v=061317"></script>
+	</body>
+</html>
