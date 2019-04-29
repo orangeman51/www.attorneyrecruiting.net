@@ -203,6 +203,8 @@ jQuery(document).ready(function ($) {
     for (var i = 0; i < arr.length; i++) {
       categories.push(arr[i].Category);
     }
+    categories = Array.from(new Set(categories));
+    categories.sort();
     console.log(categories);
   }
 
