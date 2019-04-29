@@ -149,13 +149,15 @@ h6 {
 }
 
 #header #logo h1 a {
-  color: #000;
-  line-height: 1;
+  color: #457100;
+  line-height: 22px;
   display: inline-block;
+  text-align: center;
 }
 
 #header #logo h1 a span {
-  color: #457100;
+  color: #000;
+  font-size: 12px;
 }
 
 #header #logo img {
