@@ -173,7 +173,8 @@ jQuery(document).ready(function ($) {
   // read TSV file
   $.ajax({
     type: "GET",
-    url: "data/job_listings.tsv",
+    // url: "data/job_listings.tsv",
+    url: "https://orangeman51.github.io/data/job_listings.tsv",
     dataType: "text",
     success: function(data) {
       processData(data);
@@ -181,22 +182,28 @@ jQuery(document).ready(function ($) {
   });
 
   function processData(allText) {
-    // var allTextLines = allText.split(/\r\n|\n/);
-    // var headers = allTextLines[0].split(',');
-    // var lines = [];
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split('\t');
+    var lines = [];
+    for (var i = 1; i < allTextLines.length; i++) {
+      var data = allTextLines[i].split('\t');
+      if (data.length == headers.length) {
+        var lineObj = {};
+        for (var j = 0; j < headers.length; j++) {
+          lineObj[headers[j]] = data[j];
+        }
+        lines.push(lineObj);
+      }
+    }
+    getCategories(lines);
+  }
 
-    // for (var i = 0; i < allTextLines.length; i++) {
-    //   var data = allTextLines[i].split(',');
-    //   if (data.length == headers.length) {
-
-    //     var tarr = [];
-    //     for (var j = 0; j < headers.length; j++) {
-    //       tarr.push(headers[j] + ":" + data[j]);
-    //     }
-    //     lines.push(tarr);
-    //   }
-    // }
-    console.log(allText);
+  function getCategories(arr) {
+    var categories = [];
+    for (var i = 0; i < arr.length; i++) {
+      categories.push(arr[i].Category);
+    }
+    console.log(categories);
   }
 
 });
