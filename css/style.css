@@ -96,7 +96,15 @@ h6 {
   padding: 4px;
 }
 
-#topbar .contact-info .fa-phone {
+#topbar .contact-info i.fa-linkedin {
+  color: #555;
+}
+
+#topbar .contact-info i.fa-linkedin:hover {
+  color: #457100;
+}
+
+#topbar .contact-info .fa-phone, #topbar .contact-info .fa-fax, #topbar .contact-info .fa-linkedin {
   padding-left: 20px;
   margin-left: 20px;
   border-left: 1px solid #e9e9e9;
@@ -543,7 +551,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #about .about-img img {
   margin-left: -15px;
-  max-width: 100%;
+  max-width: 40%;
+  float: left;
 }
 
 #about .content h2 {
@@ -707,14 +716,21 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 0;
   vertical-align: middle;
   text-align: center;
+  height: 8vw;
+  background-color: #fff;
 }
 
 #portfolio .portfolio-item h2 {
-  color: #ffffff;
-  font-size: 24px;
+  color: #457100;
+  font-size: 12px;
   margin: 0;
   text-transform: capitalize;
   font-weight: 700;
+  transition: all ease-in-out 0.4s;
+}
+
+#portfolio .portfolio-item:hover h2 {
+  color: #fff;
 }
 
 #portfolio .portfolio-item img {
@@ -729,7 +745,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #portfolio .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.7);
+  background: #457100;
 }
 
 #portfolio .portfolio-info {
