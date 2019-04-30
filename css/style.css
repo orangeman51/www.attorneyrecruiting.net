@@ -786,7 +786,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   box-shadow: none;
 }
 
-.modal-body button:focus, .modal-body span:focus {
+.modal-content *:focus {
   outline: none;
 }
 
