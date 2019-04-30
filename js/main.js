@@ -10,10 +10,6 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  // remove fade class on mobile because it is not compatible
-  $('#listingsModal').removeClass('fade');
-
-
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
