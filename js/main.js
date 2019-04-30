@@ -1,5 +1,15 @@
 jQuery(document).ready(function ($) {
 
+    // read TSV file
+  $.ajax({
+    type: "GET",
+    url: "data/job_listings.tsv",
+    dataType: "text",
+    success: function(data) {
+      processData(data);
+    }
+  });
+
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
@@ -170,32 +180,21 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  // read TSV file
-  $.ajax({
-    type: "GET",
-    // url: "data/job_listings.tsv",
-    url: "https://orangeman51.github.io/data/job_listings.tsv",
-    dataType: "text",
-    success: function(data) {
-      processData(data);
-    }
-  });
-
   function processData(allText) {
     var allTextLines = allText.split(/\r\n|\n/);
-    var headers = allTextLines[0].split('\t');
-    var lines = [];
+    HEADERS = allTextLines[0].split('\t');
+    MODALDATA = [];
     for (var i = 1; i < allTextLines.length; i++) {
       var data = allTextLines[i].split('\t');
-      if (data.length == headers.length) {
+      if (data.length == HEADERS.length) {
         var lineObj = {};
-        for (var j = 0; j < headers.length; j++) {
-          lineObj[headers[j]] = data[j];
+        for (var j = 0; j < HEADERS.length; j++) {
+          lineObj[HEADERS[j]] = data[j];
         }
-        lines.push(lineObj);
+        MODALDATA.push(lineObj);
       }
     }
-    getCategories(lines);
+    getCategories(MODALDATA);
   }
 
   function getCategories(arr) {
@@ -205,7 +204,35 @@ jQuery(document).ready(function ($) {
     }
     categories = Array.from(new Set(categories));
     categories.sort();
-    console.log(categories);
+    populateCategories(categories);
   }
+
+  function populateCategories(categories) {
+    for (var i = 0; i < categories.length; i++) {
+      $('#listings').append('<div class="col-lg-3 col-md-4" data-toggle="modal" data-target="#listingsModal"><div class="portfolio-item wow fadeInUp"><a><div class="portfolio-overlay"><div class="portfolio-info"><h2 class="wow fadeInUp">' + categories[i] + '</h2></div></div></a></div></div>');
+    }
+  }
+
+  // Populate modal on click
+  $('#listingsModal').on('show.bs.modal', function (event) {
+    $('.modal-body thead tr').empty();
+    $('.modal-body tbody').empty();
+    var buttonText = $(event.relatedTarget)[0].innerText; // Text of button that triggered the modal
+    var filteredArr = MODALDATA.filter(arrElement => arrElement.Category == buttonText);
+    $(this).find('.modal-title')[0].innerHTML = buttonText + ' Job Listings';
+    for (var i = 0; i < HEADERS.length; i++) {
+      if (HEADERS[i] !== "Category") {
+        $('.modal-body thead tr').append('<th scope="col">' + HEADERS[i] + '</th>');
+      }
+    }
+    for (var i = 0; i < filteredArr.length; i++) {
+      $('.modal-body tbody').append('<tr><td><a class="btn btn-success" href="mailto:JWeiss@AttorneyRecruiting.net?subject=JSW Job #' + filteredArr[i]['Job Number'] + '&body=I am interested in learning more about job number ' + filteredArr[i]['Job Number'] + '. Can you send me more information?">Inquire</a></td></tr>');
+      for (var key in filteredArr[i]) {
+        if (key !== "Category") {
+          $('.modal-body tbody tr:last-child td:has(a)').before('<td>' + filteredArr[i][key] + '</td>');
+        }
+      }
+    }
+  });
 
 });

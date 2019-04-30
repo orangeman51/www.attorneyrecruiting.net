@@ -758,6 +758,21 @@ body.mobile-nav-active #mobile-nav-toggle {
   transform: translate(-50%, -50%);
 }
 
+#listings > div:hover {
+  cursor: pointer;
+}
+
+/* Modal
+--------------------------------*/
+
+.modal-body {
+  padding-top: 0px;
+}
+
+.modal-body .table thead th {
+  border: 0px;
+}
+
 /* Testimonials Section
 --------------------------------*/
 
