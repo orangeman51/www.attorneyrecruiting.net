@@ -773,6 +773,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 0px;
 }
 
+.modal-body .btn-success {
+  background-color: #457100;
+  border-color: #457100;
+}
+
+.modal-body .btn-success:hover {
+  color: #457100;
+  background-color: transparent;
+}
+
 /* Testimonials Section
 --------------------------------*/
 
