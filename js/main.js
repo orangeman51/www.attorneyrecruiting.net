@@ -181,6 +181,8 @@ jQuery(document).ready(function ($) {
   });
 
   function processData(allText) {
+    // remove quotes
+    allText = allText.replace(/['"]+/g,'');
     var allTextLines = allText.split(/\r\n|\n/);
     HEADERS = allTextLines[0].split('\t');
     MODALDATA = [];
