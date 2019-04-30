@@ -594,6 +594,116 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding-bottom: 10px;
 }
 
+/* Bio Section
+--------------------------------*/
+
+#bio {
+  padding: 60px 0 30px 0;
+}
+
+#bio .about-img {
+  overflow: hidden;
+}
+
+#bio .about-img img {
+  margin-left: -15px;
+  max-width: 40%;
+  float: left;
+}
+
+#bio .content h2 {
+  color: #000;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+}
+
+#bio .content h3 {
+  color: #000;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+}
+
+#bio .content p {
+  line-height: 26px;
+}
+
+#bio .content p:last-child {
+  margin-bottom: 0;
+}
+
+#bio .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #457100;
+}
+
+#bio .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#bio .content ul li {
+  padding-bottom: 10px;
+}
+
+/* Employer Section
+--------------------------------*/
+
+#employer {
+  padding: 60px 0 30px 0;
+}
+
+#employer .about-img {
+  overflow: hidden;
+}
+
+#employer .about-img img {
+  margin-left: -15px;
+  max-width: 40%;
+  float: left;
+}
+
+#employer .content h2 {
+  color: #000;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+}
+
+#employer .content h3 {
+  color: #000;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+}
+
+#employer .content p {
+  line-height: 26px;
+}
+
+#employer .content p:last-child {
+  margin-bottom: 0;
+}
+
+#employer .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #457100;
+}
+
+#employer .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#employer .content ul li {
+  padding-bottom: 10px;
+}
+
 /* Services Section
 --------------------------------*/
 
