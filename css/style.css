@@ -23,7 +23,6 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #51d8af;
   outline: none;
   text-decoration: none;
 }
@@ -781,6 +780,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 .modal-body .btn-success:hover {
   color: #457100;
   background-color: transparent;
+}
+
+.modal-body .btn:focus {
+  box-shadow: none;
 }
 
 /* Testimonials Section
