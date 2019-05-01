@@ -220,22 +220,26 @@ jQuery(document).ready(function ($) {
     $('.modal-body thead tr').empty();
     $('.modal-body tbody').empty();
     // var buttonText = $(event.relatedTarget)[0].innerText; // Text of button that triggered the modal
-    var buttonText = $(touch.relatedTarget)[0].innerText; // Text of button that triggered the modal
-    var filteredArr = MODALDATA.filter(arrElement => arrElement.Category == buttonText);
-    $(this).find('.modal-title')[0].innerHTML = buttonText + ' Job Listings';
-    for (var i = 0; i < HEADERS.length; i++) {
-      if (HEADERS[i] !== "Category") {
-        $('.modal-body thead tr').append('<th scope="col">' + HEADERS[i] + '</th>');
-      }
-    }
-    for (var i = 0; i < filteredArr.length; i++) {
-      $('.modal-body tbody').append('<tr><td><a class="btn btn-success" href="mailto:JWeiss@AttorneyRecruiting.net?subject=JSW Job #' + filteredArr[i]['Job Number'] + '&body=I am interested in learning more about job number ' + filteredArr[i]['Job Number'] + '. Can you send me more information?">Inquire</a></td></tr>');
-      for (var key of Object.keys(filteredArr[i])) {
-        if (key !== "Category") {
-          $('.modal-body tbody tr:last-child td:has(a)').before('<td>' + filteredArr[i][key] + '</td>');
-        }
-      }
-    }
-  });
+    console.log($(event.relatedTarget));
+    console.log($(event.currentTarget));
+    console.log($(event.target));
+    console.log($(event.explicitOriginalTarget));
+    console.log($(event.originalTarget));
+  //   var filteredArr = MODALDATA.filter(arrElement => arrElement.Category == buttonText);
+  //   $(this).find('.modal-title')[0].innerHTML = buttonText + ' Job Listings';
+  //   for (var i = 0; i < HEADERS.length; i++) {
+  //     if (HEADERS[i] !== "Category") {
+  //       $('.modal-body thead tr').append('<th scope="col">' + HEADERS[i] + '</th>');
+  //     }
+  //   }
+  //   for (var i = 0; i < filteredArr.length; i++) {
+  //     $('.modal-body tbody').append('<tr><td><a class="btn btn-success" href="mailto:JWeiss@AttorneyRecruiting.net?subject=JSW Job #' + filteredArr[i]['Job Number'] + '&body=I am interested in learning more about job number ' + filteredArr[i]['Job Number'] + '. Can you send me more information?">Inquire</a></td></tr>');
+  //     for (var key of Object.keys(filteredArr[i])) {
+  //       if (key !== "Category") {
+  //         $('.modal-body tbody tr:last-child td:has(a)').before('<td>' + filteredArr[i][key] + '</td>');
+  //       }
+  //     }
+  //   }
+  // });
 
 });
