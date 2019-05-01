@@ -229,7 +229,7 @@ jQuery(document).ready(function ($) {
     }
     for (var i = 0; i < filteredArr.length; i++) {
       $('.modal-body tbody').append('<tr><td><a class="btn btn-success" href="mailto:JWeiss@AttorneyRecruiting.net?subject=JSW Job #' + filteredArr[i]['Job Number'] + '&body=I am interested in learning more about job number ' + filteredArr[i]['Job Number'] + '. Can you send me more information?">Inquire</a></td></tr>');
-      for (var key in filteredArr[i]) {
+      for (var key of Object.keys(filteredArr[i])) {
         if (key !== "Category") {
           $('.modal-body tbody tr:last-child td:has(a)').before('<td>' + filteredArr[i][key] + '</td>');
         }
