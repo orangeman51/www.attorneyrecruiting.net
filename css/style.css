@@ -900,6 +900,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   outline: none;
 }
 
+.modal-body * {
+  font-size: 1.5vw;
+}
+
+.modal-title {
+  font-size: 3.5vw;
+}
+
 /* Testimonials Section
 --------------------------------*/
 
