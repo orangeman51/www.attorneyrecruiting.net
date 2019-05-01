@@ -219,7 +219,8 @@ jQuery(document).ready(function ($) {
   $('#listingsModal').on('show.bs.modal', function (event) {
     $('.modal-body thead tr').empty();
     $('.modal-body tbody').empty();
-    var buttonText = $(event.relatedTarget)[0].innerText; // Text of button that triggered the modal
+    // var buttonText = $(event.relatedTarget)[0].innerText; // Text of button that triggered the modal
+    var buttonText = $(touch.relatedTarget)[0].innerText; // Text of button that triggered the modal
     var filteredArr = MODALDATA.filter(arrElement => arrElement.Category == buttonText);
     $(this).find('.modal-title')[0].innerHTML = buttonText + ' Job Listings';
     for (var i = 0; i < HEADERS.length; i++) {
