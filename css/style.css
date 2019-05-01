@@ -901,11 +901,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .modal-body * {
-  font-size: 1.5vw;
+  font-size: 100%;
 }
 
 .modal-title {
-  font-size: 3.5vw;
+  font-size: 200%;
 }
 
 /* Testimonials Section
