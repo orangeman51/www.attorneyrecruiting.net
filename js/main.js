@@ -216,7 +216,8 @@ jQuery(document).ready(function ($) {
   }
 
   // Populate modal on click
-  $('#listings').on('click', '.col-lg-3.col-md-4', function (event) {
+  $('#listings').on('click', '.portfolio-item', function (event) {
+    console.log($(event.target)[0]);
     $('.modal-body thead tr').empty();
     $('.modal-body tbody').empty();
     var buttonText = $(event.target)[0].innerText; // Text of button that triggered the modal
