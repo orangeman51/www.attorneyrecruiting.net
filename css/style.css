@@ -840,6 +840,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: all ease-in-out 0.4s;
 }
 
+/*mobile*/
+@media (max-width: 768px) {
+  #portfolio .portfolio-item h2 {
+    font-size: 14px;
+  }
+}
+
 #portfolio .portfolio-item:hover h2 {
   color: #fff;
 }
