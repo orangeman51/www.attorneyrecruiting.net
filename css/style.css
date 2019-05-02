@@ -900,6 +900,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   outline: none;
 }
 
+/*mobile*/
 @media (max-width: 768px) {
   .modal-body * {
     font-size: 10px;
