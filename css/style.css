@@ -900,8 +900,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   outline: none;
 }
 
-.modal-body * {
-  font-size: 14px;
+@media (max-width: 768px) {
+  .modal-body * {
+    font-size: 10px;
+  }
+
+  .modal-title {
+    font-size: 14px;
+  }
 }
 
 /* Testimonials Section
