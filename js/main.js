@@ -186,6 +186,7 @@ jQuery(document).ready(function ($) {
     var allTextLines = allText.split(/\r\n|\n/);
     HEADERS = allTextLines[0].split('\t');
     MODALDATA = [];
+    // start at 1 to exclude header
     for (var i = 1; i < allTextLines.length; i++) {
       var data = allTextLines[i].split('\t');
       if (data.length == HEADERS.length) {
@@ -217,7 +218,6 @@ jQuery(document).ready(function ($) {
 
   // Populate modal on click
   $('#listings').on('click', '.portfolio-item', function (event) {
-    console.log($(event.target)[0]);
     $('.modal-body thead tr').empty();
     $('.modal-body tbody').empty();
     var buttonText = $(event.target)[0].innerText; // Text of button that triggered the modal

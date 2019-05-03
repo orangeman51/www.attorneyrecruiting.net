@@ -44,6 +44,14 @@ h6 {
   padding: 0;
 }
 
+ul {
+  margin-bottom: 30px;
+}
+
+li {
+  padding-bottom: 10px;
+}
+
 /* Back to top button */
 
 .back-to-top {
@@ -702,6 +710,175 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #employer .content ul li {
   padding-bottom: 10px;
+}
+
+/* Candidate Section
+--------------------------------*/
+
+#candidate {
+  padding: 60px 0 30px 0;
+}
+
+#candidate .about-img {
+  overflow: hidden;
+}
+
+#candidate .about-img img {
+  margin-left: -15px;
+  max-width: 40%;
+  float: left;
+}
+
+#candidate .content h2 {
+  color: #000;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+}
+
+#candidate .content h3 {
+  color: #000;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+}
+
+#candidate .content p {
+  line-height: 26px;
+}
+
+#candidate .content p:last-child {
+  margin-bottom: 0;
+}
+
+#candidate .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #457100;
+}
+
+#candidate .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#candidate .content ul li {
+  padding-bottom: 10px;
+}
+
+/* Interview Section
+--------------------------------*/
+
+#interview {
+  padding: 60px 0 30px 0;
+}
+
+#interview .about-img {
+  overflow: hidden;
+}
+
+#interview .about-img img {
+  margin-left: -15px;
+  max-width: 40%;
+  float: left;
+}
+
+#interview .content h2 {
+  color: #000;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+}
+
+#interview .content h3 {
+  color: #000;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+}
+
+#interview .content p {
+  line-height: 26px;
+}
+
+#interview .content p:last-child {
+  margin-bottom: 0;
+}
+
+#interview .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #457100;
+}
+
+#interview .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#interview .content ul li {
+  padding-bottom: 10px;
+}
+
+/* FAQ Section
+--------------------------------*/
+
+#faq {
+  padding: 60px 0 30px 0;
+}
+
+#faq .about-img {
+  overflow: hidden;
+}
+
+#faq .about-img img {
+  margin-left: -15px;
+  max-width: 40%;
+  float: left;
+}
+
+#faq .content h2 {
+  color: #000;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+}
+
+#faq .content h3 {
+  color: #000;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  font-style: italic;
+}
+
+#faq .content p {
+  line-height: 26px;
+}
+
+#faq .content p:last-child {
+  margin-bottom: 0;
+}
+
+#faq .content i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #457100;
+}
+
+#faq .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#faq .content ul li {
+  padding-bottom: 10px;
+}
+
+#faq ul {
+  list-style: none;
 }
 
 /* Services Section
