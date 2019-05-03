@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
     // read TSV file
   $.ajax({
     type: "GET",
-    url: "data/job_listings.tsv",
+    url: "job_listings_data/job_listings.tsv",
     dataType: "text",
     success: function(data) {
       processData(data);
@@ -212,7 +212,7 @@ jQuery(document).ready(function ($) {
 
   function populateCategories(categories) {
     for (var i = 0; i < categories.length; i++) {
-      $('#listings').append('<div class="col-lg-3 col-md-4" data-toggle="modal" data-target="#listingsModal"><div class="portfolio-item wow fadeInUp"><a><div class="portfolio-overlay"><div class="portfolio-info"><h2 class="wow fadeInUp">' + categories[i] + '</h2></div></div></a></div></div>');
+      $('#listings').append('<div class="col-lg-3 col-md-4" data-toggle="modal" data-target="#listingsModal"><div class="portfolio-item wow fadeInUp rounded"><a><div class="portfolio-overlay"><div class="portfolio-info"><h2 class="wow fadeInUp">' + categories[i] + '</h2></div></div></a></div></div>');
     }
   }
 
