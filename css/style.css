@@ -11,7 +11,7 @@
 
 body {
   background: #fff;
-  color: #444;
+  color: #000;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -908,7 +908,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box .icon i {
-  color: #444;
+  color: #000;
   font-size: 64px;
   transition: 0.5s;
   line-height: 0;
@@ -931,7 +931,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box h4 a {
-  color: #444;
+  color: #000;
 }
 
 #services .box p {
@@ -1080,8 +1080,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   box-shadow: none;
 }
 
+.modal-body td {
+  vertical-align: middle;
+}
+
 .modal-content *:focus {
   outline: none;
+}
+
+.modal-body tbody, .modal-body .btn {
+  font-size: .8rem;
 }
 
 /*mobile*/
