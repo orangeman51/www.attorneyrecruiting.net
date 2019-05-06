@@ -1082,6 +1082,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .modal-body td {
   vertical-align: middle;
+  max-width: 12vw;
 }
 
 .modal-content *:focus {
@@ -1104,7 +1105,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
   .modal-body tbody, .modal-body .btn {
     font-size: 7px;
-    padding: .325rem .25rem;
+    /*padding: .325rem .25rem;*/
   }
 }
 
