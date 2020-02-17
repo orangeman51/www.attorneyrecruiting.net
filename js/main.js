@@ -212,12 +212,12 @@ jQuery(document).ready(function ($) {
 
   function populateCategories(categories) {
     for (var i = 0; i < categories.length; i++) {
-      $('#listings').append('<div class="col-lg-3 col-md-4 job-cat" data-toggle="modal" data-target="#listingsModal"><div class="portfolio-item wow fadeInUp rounded"><a><div class="portfolio-overlay"><div class="portfolio-info"><h2 class="wow fadeInUp">' + categories[i] + '</h2></div></div></a></div></div>');
+      $('#listings').append('<div class="col-lg-3 col-md-4" data-toggle="modal" data-target="#listingsModal"><div class="portfolio-item wow fadeInUp rounded"><a><div class="portfolio-overlay"><div class="portfolio-info"><h2 class="wow fadeInUp">' + categories[i] + '</h2></div></div></a></div></div>');
     }
   }
 
   // Populate modal on click
-  $('#listings').on('click', '.job-cat', function (event) {
+  $('#listings').on('click', '.portfolio-item', function (event) {
     $('.modal-body thead tr').empty();
     $('.modal-body tbody').empty();
     var buttonText = $(event.target)[0].innerText; // Text of button that triggered the modal
